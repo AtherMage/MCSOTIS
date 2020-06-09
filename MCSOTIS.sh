@@ -18,4 +18,5 @@ fi
 if [ "${userinput1:-}" = "3" ]
 then 
         apt-get install software-properties-common -y && add-apt-repository ppa:openjdk-r/ppa && apt-get update && apt-get install openjdk-8-jre -y && echo -e Complete! 
+fi
 # Hi there!
