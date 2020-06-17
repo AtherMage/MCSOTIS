@@ -4,10 +4,9 @@ read -p 'Hey. This is the installer of the minecraft server on your phone. Make 
 2) Spigot 1.14.4
 3) Spigot 1.12.2
 4) Vanilla 1.15.2 (WIP, do NOT select this!)
-5) Only install Java Development Kit (JDK) 
 To request support for other versions, write to athermage@gmail.com in English or Russian.
 Script by AtherMage with Love <3
-Version:' userinput1;
+Version: ' userinput1;
 #
 if [ "${userinput1:-}" = "1" ]
 then
