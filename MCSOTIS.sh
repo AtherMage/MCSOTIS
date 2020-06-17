@@ -7,7 +7,8 @@ read -p 'Hey. This is the installer of the minecraft server on your phone. Make 
 5) Only install Java Development Kit (JDK) 
 To request support for other versions, write to athermage@gmail.com in English or Russian.
 Script by AtherMage with Love <3
-Version:'userinput1;
+Version:' userinput1;
+#
 if [ "${userinput1:-}" = "1" ]
 then
      apt-get install software-properties-common -y
