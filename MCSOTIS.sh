@@ -4,11 +4,13 @@ read -p 'Hey. This is the installer of the minecraft server on your phone. Make 
 2) Spigot 1.14.4
 3) Spigot 1.12.2
 4) Vanilla 1.15.2 
-5) Only install Java Development Kit (JDK) 
+5) Vanilla 1.14.4
+0) Only install Java Development Kit (JDK) 
+X) Exit
 To request support for other versions, write to athermage@gmail.com in English or Russian.
 Script by AtherMage with Love <3
 Version:' userinput1;
-#
+#Hi! If you are reading this, it means that you are interested in how this script is made. I will say right away - VERY BAD. I don't know anything about programming. The basis for this script was laid by the Android application "Termux Script Maker", it was in it that I learned to use the "read -p" and "if". I'm sorry that the script is made so badly.
 if [ "${userinput1:-}" = "1" ]
 then
  apt-get install software-properties-common -y #Installing basic repositories
@@ -94,6 +96,27 @@ then
  echo -e Complete!
 fi
 if [ "${userinput1:-}" = "5" ]
+then
+ apt-get install software-properties-common -y 
+ add-apt-repository ppa:openjdk-r/ppa
+ apt-get updateapt-get install openjdk-8-jre -y
+ cd ..
+ wget -O vanilla_1.14.4.jar https://gid-minecraft.ru/download.php?c=minepacks&s=a91030869dbb12d0a4f677621e8a75c2&f=minecraft-server-1.14.4.jar&pid=9014&eid=0&t=1592418627
+ cd MCSOTIS
+ git clone https://github.com/AtherMage/Vanilla_Data
+ cd Vanilla_Data
+ cp eula.txt ../..
+ cp server.properties ../..
+ cd ../..
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
+ apt-get install zip unzip
+ unzip ngrok.zip
+ echo "java -Xms512M -Xmx2048M -jar vanilla_1.14.4.jar" >> start.sh
+ chmod +x start.sh vanilla_1.14.4.jar
+ clear
+ echo -e Complete!
+fi
+if [ "${userinput1:-}" = "0" ]
 then 
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -101,4 +124,9 @@ then
  apt-get install openjdk-8-jre -y
  clear
  echo -e Complete! 
-fi
+fi 
+if [ "${userinput1:-}" = "X" ]
+then 
+ clear
+ echo -e "Ok, bye!"
+fi 
