@@ -5,13 +5,16 @@ read -p 'Hey. This is the installer of the minecraft server on your phone. Make 
 3) Spigot 1.12.2
 4) Vanilla 1.15.2 
 5) Vanilla 1.14.4
-0) Only install Java Development Kit (JDK) 
+6) Vanilla 1.13.2
+7) Vanilla 1.12.2
+8) Vanilla 1.7.10
+0) Only install Java Development Kit 
 X) Exit
 To request support for other versions, write to athermage@gmail.com in English or Russian.
 Script by AtherMage with Love <3
-Version:' userinput1;
+Version:' version;
 #Hi! If you are reading this, it means that you are interested in how this script is made. I will say right away - VERY BAD. I don't know anything about programming. The basis for this script was laid by the Android application "Termux Script Maker", it was in it that I learned to use the "read -p" and "if". I'm sorry that the script is made so badly.
-if [ "${userinput1:-}" = "1" ]
+if [ "${version:-}" = "1" ]
 then
  apt-get install software-properties-common -y #Installing basic repositories
  add-apt-repository ppa:openjdk-r/ppa #Adding JDK to repositories list
@@ -32,7 +35,7 @@ then
  clear  
  echo -e Complete!
 fi
-if [ "${userinput1:-}" = "2" ]
+if [ "${version:-}" = "2" ]
 then
  apt-get install software-properties-common -y  
  add-apt-repository ppa:openjdk-r/ppa  
@@ -53,7 +56,7 @@ then
  clear
  echo -e Complete!
 fi
-if [ "${userinput1:-}" = "3" ]
+if [ "${version:-}" = "3" ]
 then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -74,7 +77,7 @@ then
  clear
  echo -e Complete!
 fi
-if [ "${userinput1:-}" = "4" ]
+if [ "${version:-}" = "4" ]
 then
  apt-get install software-properties-common -y 
  add-apt-repository ppa:openjdk-r/ppa
@@ -95,7 +98,7 @@ then
  clear
  echo -e Complete!
 fi
-if [ "${userinput1:-}" = "5" ]
+if [ "${version:-}" = "5" ]
 then
  apt-get install software-properties-common -y 
  add-apt-repository ppa:openjdk-r/ppa
@@ -116,7 +119,70 @@ then
  clear
  echo -e Complete!
 fi
-if [ "${userinput1:-}" = "0" ]
+if [ "${version:-}" = "6" ]
+then 
+ apt-get install software-properties-common -y 
+ add-apt-repository ppa:openjdk-r/ppa
+ apt-get updateapt-get install openjdk-8-jre -y
+ cd ..
+ wget -O vanilla_1.13.2.jar https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar
+ cd MCSOTIS
+ git clone https://github.com/AtherMage/Vanilla_Data
+ cd Vanilla_Data
+ cp eula.txt ../..
+ cp server.properties ../..
+ cd ../..
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
+ apt-get install zip unzip
+ unzip ngrok.zip
+ echo "java -Xms512M -Xmx2048M -jar vanilla_1.13.2.jar" >> start.sh
+ chmod +x start.sh vanilla_1.13.2.jar
+ clear
+ echo -e Complete!
+fi
+if [ "${version:-}" = "7" ]
+then 
+ apt-get install software-properties-common -y 
+ add-apt-repository ppa:openjdk-r/ppa
+ apt-get updateapt-get install openjdk-8-jre -y
+ cd ..
+ wget -O vanilla_1.12.2.jar https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar
+ cd MCSOTIS
+ git clone https://github.com/AtherMage/Vanilla_Data
+ cd Vanilla_Data
+ cp eula.txt ../..
+ cp server.properties ../..
+ cd ../..
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
+ apt-get install zip unzip
+ unzip ngrok.zip
+ echo "java -Xms512M -Xmx2048M -jar vanilla_1.12.2.jar" >> start.sh
+ chmod +x start.sh vanilla_1.12.2.jar
+ clear
+ echo -e Complete!
+fi
+if [ "${version:-}" = "8" ]
+then 
+ apt-get install software-properties-common -y 
+ add-apt-repository ppa:openjdk-r/ppa
+ apt-get updateapt-get install openjdk-8-jre -y
+ cd ..
+ wget -O vanilla_1.7.10.jar https://launcher.mojang.com/mc/game/1.7.10/server/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar
+ cd MCSOTIS
+ git clone https://github.com/AtherMage/Vanilla_Data
+ cd Vanilla_Data
+ cp eula.txt ../..
+ cp server.properties ../..
+ cd ../..
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
+ apt-get install zip unzip
+ unzip ngrok.zip
+ echo "java -Xms512M -Xmx2048M -jar vanilla_1.7.10.jar" >> start.sh
+ chmod +x start.sh vanilla_1.7.10.jar
+ clear
+ echo -e Complete!
+fi
+if [ "${version:-}" = "0" ]
 then 
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -125,7 +191,7 @@ then
  clear
  echo -e Complete! 
 fi 
-if [ "${userinput1:-}" = "X" ]
+if [ "${version:-}" = "X" ]
 then 
  clear
  echo -e "Ok, bye!"
