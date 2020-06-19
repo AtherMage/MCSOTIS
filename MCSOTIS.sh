@@ -1,5 +1,5 @@
 clear
-read -p 'Hey. This is the installer of the minecraft server on your phone. Make sure you run this script in Ubuntu, and choose the version:
+read -p 'Please, select a version:
 1) Spigot 1.15.2
 2) Spigot 1.14.4
 3) Spigot 1.12.2
@@ -8,9 +8,10 @@ read -p 'Hey. This is the installer of the minecraft server on your phone. Make 
 6) Vanilla 1.13.2
 7) Vanilla 1.12.2
 8) Vanilla 1.7.10
+9) Forge 1.12.2
 0) Only install Java Development Kit 
+?) About MCSOTIS
 X) Exit
-To request support for other versions, write to athermage@gmail.com in English or Russian.
 Script by AtherMage with Love <3
 Version:' version;
 #Hi! If you are reading this, it means that you are interested in how this script is made. I will say right away - VERY BAD. I don't know anything about programming. The basis for this script was laid by the Android application "Termux Script Maker", it was in it that I learned to use the "read -p" and "if". I'm sorry that the script is made so badly.
@@ -182,6 +183,24 @@ then
  clear
  echo -e Complete!
 fi
+if [ "${version:-}" = "9" ]
+then 
+ apt-get install software-properties-common -y 
+ add-apt-repository ppa:openjdk-r/ppa
+ apt-get updateapt-get install openjdk-8-jre -y
+ cd ..
+ wget -O minecraft_server.1.12.2.jar https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar
+ git clone https://github.com/AtherMage/Forge_1.12.2_Data
+ cd Forge_1.12.2_Data
+ cp * ..
+ cd ..
+ apt-get install zip unzip
+ unzip ngrok.zip
+ echo "java -Xms512M -Xmx2048M -jar forge-1.12.2-14.23.5.2854.jar" >> start.sh
+ chmod +x start.sh forge-1.12.2-14.23.5.2854.jar
+ clear
+ echo -e Complete!
+fi
 if [ "${version:-}" = "0" ]
 then 
  apt-get install software-properties-common -y
@@ -191,6 +210,16 @@ then
  clear
  echo -e Complete! 
 fi 
+if [ "${version:-}" = "?" ]
+then 
+ clear
+ echo -e "MCSOTIS - MineCraftServerOnTermuxInstallationScript. This script is designed to simplify the process of creating a Minecraft server on your phone. What does it do?
+ 1) Install Java
+ 2) Download the selected version 
+ 3) Copy pre-modified files 'eula.txt' and 'server.properties' 
+ 4) Installs NGROK just in case.
+ The script is still in development. if you find a bug or want to add support for other versions, write to athermage@gmail.com"
+fi
 if [ "${version:-}" = "X" ]
 then 
  clear
