@@ -1,5 +1,7 @@
 clear
-read -p 'Please, select a version:
+echo -e "MCSOTIS by AtherMage
+   \e[1;31m!!!BETA!!!\e[0m
+Please, select a version:
 1) Spigot 1.15.2
 2) Spigot 1.14.4
 3) Spigot 1.12.2
@@ -9,12 +11,12 @@ read -p 'Please, select a version:
 7) Vanilla 1.12.2
 8) Vanilla 1.7.10
 9) Forge 1.12.2
-0) Only install Java Development Kit 
-?) About MCSOTIS
-X) Exit
-Script by AtherMage with Love <3
-Version:' version;
-#Hi! If you are reading this, it means that you are interested in how this script is made. I will say right away - VERY BAD. I don't know anything about programming. The basis for this script was laid by the Android application "Termux Script Maker", it was in it that I learned to use the "read -p" and "if". I'm sorry that the script is made so badly.
+10)Forge 1.17.10
+\e[1;33m0) Only install Java Development Kit 
+?) About MCSOTIS\e[0m
+\e[1;31mX) Exit\e[0m"
+read -p 'Version:' version;
+#Hi! If you are reading this, it means that you are interested in how this script is made. I will say right away - VERY BAD. I don't know anything about programming. The basis for this script was made by the Android application "Termux Script Maker", it was in it that I learned to use the "read -p" and "if". I'm sorry that the script is made so badly.
 if [ "${version:-}" = "1" ]
 then
  apt-get install software-properties-common -y #Installing basic repositories
@@ -34,7 +36,7 @@ then
  apt-get install zip unzip  
  unzip ngrok.zip  
  clear  
- echo -e Complete!
+ echo -e "\e[32mComplete!\e[0m"
 fi
 if [ "${version:-}" = "2" ]
 then
@@ -82,7 +84,8 @@ if [ "${version:-}" = "4" ]
 then
  apt-get install software-properties-common -y 
  add-apt-repository ppa:openjdk-r/ppa
- apt-get updateapt-get install openjdk-8-jre -y
+ apt-get update -y
+ apt-get install openjdk-8-jre -y
  cd ..
  wget -O vanilla_1.15.2.jar https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar
  cd MCSOTIS
@@ -97,13 +100,14 @@ then
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.15.2.jar" >> start.sh
  chmod +x start.sh vanilla_1.15.2.jar
  clear
- echo -e Complete!
+ echo -e "\e[32mComplete!\e[0m"
 fi
 if [ "${version:-}" = "5" ]
 then
  apt-get install software-properties-common -y 
  add-apt-repository ppa:openjdk-r/ppa
- apt-get updateapt-get install openjdk-8-jre -y
+ apt-get update -y
+ apt-get install openjdk-8-jre -y
  cd ..
  wget -O vanilla_1.14.4.jar https://gid-minecraft.ru/download.php?c=minepacks&s=a91030869dbb12d0a4f677621e8a75c2&f=minecraft-server-1.14.4.jar&pid=9014&eid=0&t=1592418627
  cd MCSOTIS
@@ -118,13 +122,14 @@ then
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.14.4.jar" >> start.sh
  chmod +x start.sh vanilla_1.14.4.jar
  clear
- echo -e Complete!
+ echo -e "\e[32mComplete!\e[0m"
 fi
 if [ "${version:-}" = "6" ]
 then 
  apt-get install software-properties-common -y 
  add-apt-repository ppa:openjdk-r/ppa
- apt-get updateapt-get install openjdk-8-jre -y
+ apt-get update -y
+ apt-get install openjdk-8-jre -y
  cd ..
  wget -O vanilla_1.13.2.jar https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar
  cd MCSOTIS
@@ -139,13 +144,14 @@ then
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.13.2.jar" >> start.sh
  chmod +x start.sh vanilla_1.13.2.jar
  clear
- echo -e Complete!
+ echo -e "\e[32mComplete!\e[0m"
 fi
 if [ "${version:-}" = "7" ]
 then 
  apt-get install software-properties-common -y 
  add-apt-repository ppa:openjdk-r/ppa
- apt-get updateapt-get install openjdk-8-jre -y
+ apt-get update -y
+ apt-get install openjdk-8-jre -y
  cd ..
  wget -O vanilla_1.12.2.jar https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar
  cd MCSOTIS
@@ -160,13 +166,14 @@ then
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.12.2.jar" >> start.sh
  chmod +x start.sh vanilla_1.12.2.jar
  clear
- echo -e Complete!
+ echo -e "\e[32mComplete!\e[0m"
 fi
 if [ "${version:-}" = "8" ]
 then 
  apt-get install software-properties-common -y 
  add-apt-repository ppa:openjdk-r/ppa
- apt-get updateapt-get install openjdk-8-jre -y
+ apt-get update -y
+ apt-get install openjdk-8-jre -y
  cd ..
  wget -O vanilla_1.7.10.jar https://launcher.mojang.com/mc/game/1.7.10/server/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar
  cd MCSOTIS
@@ -181,25 +188,46 @@ then
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.7.10.jar" >> start.sh
  chmod +x start.sh vanilla_1.7.10.jar
  clear
- echo -e Complete!
+ echo -e "\e[32mComplete!\e[0m"
 fi
 if [ "${version:-}" = "9" ]
 then 
  apt-get install software-properties-common -y 
  add-apt-repository ppa:openjdk-r/ppa
- apt-get updateapt-get install openjdk-8-jre -y
+ apt-get update -y
+ apt-get install openjdk-8-jre -y
  cd ..
  wget -O minecraft_server.1.12.2.jar https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar
  git clone https://github.com/AtherMage/Forge_1.12.2_Data
  cd Forge_1.12.2_Data
  cp * ..
  cd ..
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
  echo "java -Xms512M -Xmx2048M -jar forge-1.12.2-14.23.5.2854.jar" >> start.sh
  chmod +x start.sh forge-1.12.2-14.23.5.2854.jar
  clear
- echo -e Complete!
+ echo -e "\e[32mComplete!\e[0m"
+fi
+if [ "${version:-}" = "10" ]
+then 
+ apt-get install software-properties-common -y 
+ add-apt-repository ppa:openjdk-r/ppa
+ apt-get update -y
+ apt-get install openjdk-8-jre -y
+ cd ..
+ git clone https://github.com/AtherMage/Forge_1.7.10_Data
+ cd Forge_1.7.10_Data
+ cp -r * ..
+ cd ..
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
+ apt-get install zip unzip
+ unzip ngrok.zip
+ echo "java -Xms512M -Xmx2048M -jar forge-1.7.10-10.13.4.1614-1.7.10-universal.jar" >> start.sh
+ chmod +x start.sh forge-1.7.10-10.13.4.1614-1.7.10-universal.jar
+ clear
+ echo -e "\e[32mComplete!\e[0m"
 fi
 if [ "${version:-}" = "0" ]
 then 
@@ -208,7 +236,7 @@ then
  apt-get update
  apt-get install openjdk-8-jre -y
  clear
- echo -e Complete! 
+ echo -e "\e[32mComplete!\e[0m" 
 fi 
 if [ "${version:-}" = "?" ]
 then 
