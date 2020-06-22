@@ -34,6 +34,7 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
  apt-get install zip unzip  
  unzip ngrok.zip
+ echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar spigot-1.15.2.jar" >> start.sh
  chmod +x start.sh
  clear  
@@ -57,6 +58,7 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
+ echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar spigot-1.14.4.jar" >> start.sh
  chmod +x start.sh 
  clear
@@ -80,6 +82,7 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
+ echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar spigot-1.12.2.jar" >> start.sh
  chmod +x start.sh
  clear
@@ -102,6 +105,7 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
+ echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.15.2.jar" >> start.sh
  chmod +x start.sh vanilla_1.15.2.jar
  clear
@@ -124,6 +128,7 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
+ echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.14.4.jar" >> start.sh
  chmod +x start.sh vanilla_1.14.4.jar
  clear
@@ -146,6 +151,7 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
+ echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.13.2.jar" >> start.sh
  chmod +x start.sh vanilla_1.13.2.jar
  clear
@@ -168,6 +174,7 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
+ echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.12.2.jar" >> start.sh
  chmod +x start.sh vanilla_1.12.2.jar
  clear
@@ -190,6 +197,7 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
+ echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.7.10.jar" >> start.sh
  chmod +x start.sh vanilla_1.7.10.jar
  clear
@@ -210,6 +218,7 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
+ echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar forge-1.12.2-14.23.5.2854.jar" >> start.sh
  chmod +x start.sh forge-1.12.2-14.23.5.2854.jar
  clear
@@ -229,6 +238,7 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
+ echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar forge-1.7.10-10.13.4.1614-1.7.10-universal.jar" >> start.sh
  chmod +x start.sh forge-1.7.10-10.13.4.1614-1.7.10-universal.jar
  clear
