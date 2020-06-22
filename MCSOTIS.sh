@@ -1,6 +1,5 @@
 clear
 echo -e "MCSOTIS by AtherMage
-   \e[1;31m!!!BETA!!!\e[0m
 Please, select a version:
 1) Spigot 1.15.2
 2) Spigot 1.14.4
@@ -34,7 +33,9 @@ then
  cd ../..  
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
  apt-get install zip unzip  
- unzip ngrok.zip  
+ unzip ngrok.zip
+ echo "java -Xms512M -Xmx2048M -jar spigot-1.15.2.jar" >> start.sh
+ chmod +x start.sh
  clear  
  echo -e "\e[32mComplete!\e[0m"
 fi
@@ -56,6 +57,8 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
+ echo "java -Xms512M -Xmx2048M -jar spigot-1.14.4.jar" >> start.sh
+ chmod +x start.sh 
  clear
  echo -e Complete!
 fi
@@ -77,6 +80,8 @@ then
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
+ echo "java -Xms512M -Xmx2048M -jar spigot-1.12.2.jar" >> start.sh
+ chmod +x start.sh
  clear
  echo -e Complete!
 fi
