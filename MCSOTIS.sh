@@ -315,4 +315,4 @@ if [ "${version:-}" = "X" ]
 then 
  clear
  echo -e "Ok, bye!"
-done
+fi
