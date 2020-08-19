@@ -40,7 +40,6 @@ if { "${version:-}" = "1" ]
  chmod +x start.sh 
  clear
  echo -e Complete!
-fi
 if [ "${version:-}" = "2" ]
 then
  apt-get install software-properties-common -y  
