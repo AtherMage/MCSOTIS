@@ -1,105 +1,57 @@
 clear
 echo -e "MCSOTIS by AtherMage
 Please, select a version:
-1) Spigot 1.16.2
-2) Spigot 1.16.1
-3) Spigot 1.15.2
-4) Spigot 1.14.4
-5) Spigot 1.12.2
-6) Vanilla 1.15.2 
-7) Vanilla 1.14.4
-8) Vanilla 1.13.2
-9) Vanilla 1.12.2
-10)Vanilla 1.7.10
-11)Forge 1.12.2
-12)Forge 1.7.10
-\e[1;33m0) Only install Java Development Kit 
+1) Spigot 1.15.2
+2) Spigot 1.14.4
+3) Spigot 1.12.2
+4) Vanilla 1.15.2
+5) Vanilla 1.14.4
+6) Vanilla 1.13.2
+7) Vanilla 1.12.2
+8) Vanilla 1.7.10
+9) Forge 1.12.2
+10)Forge 1.17.10
+\e[1;33m0) Only install Java Development Kit
 ?) About MCSOTIS\e[0m
 \e[1;31mX) Exit\e[0m"
 read -p 'Version:' version;
 #Hi!  If you are reading this, it means that you are interested in how this script is made. I will say right away - VERY BAD. I don't know anything about programming. The basis for this script was made by the Android application "Termux Script Maker", it was in it that I learned to use the "read -p" and "if". I'm sorry that the script is made so badly.
-if { "${version:-}" = "1" ]
- apt-get install software-properties-common -y  
- add-apt-repository ppa:openjdk-r/ppa  
- apt-get update  
- apt-get install openjdk-8-jre -y  
- git clone https://github.com/AtherMage/Spigot_1.14.4_Data  
- cd ..
- wget https://cdn.getbukkit.org/spigot/spigot-1.16.2.jar
- chmod +x spigot-1.16.2.jar
- cd MCSOTIS  
- cd Spigot_1.14.4_Data  
- cp eula.txt ../..
- cp server.properties ../..
- cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
- apt-get install zip unzip
- unzip ngrok.zip
- echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar spigot-1.16.2.jar" >> start.sh
- chmod +x start.sh 
- clear
- echo -e Complete!
-if [ "${version:-}" = "2" ]
-then
- apt-get install software-properties-common -y  
- add-apt-repository ppa:openjdk-r/ppa  
- apt-get update  
- apt-get install openjdk-8-jre -y  
- git clone https://github.com/AtherMage/Spigot_1.14.4_Data   
- cd ..
- wget https://cdn.getbukkit.org/spigot/spigot-1.16.1.jar  
- chmod +x spigot-1.16.1.jar
- cd MCSOTIS  
- cd Spigot_1.14.4_Data  
- cp eula.txt ../..
- cp server.properties ../..
- cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
- apt-get install zip unzip
- unzip ngrok.zip
- echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar spigot-1.16.1.jar" >> start.sh
- chmod +x start.sh 
- clear
- echo -e Complete!
-fi
-if [ "${version:-}" = "3" ]
+if [ "${version:-}" = "1" ]
 then
  apt-get install software-properties-common -y #Installing basic repositories
  add-apt-repository ppa:openjdk-r/ppa #Adding JDK to repositories list
  apt-get update #Updating all repositories
  apt-get install openjdk-8-jre -y  #Installing JDK
  git clone https://github.com/AtherMage/Spigot_1.15.2_Data  #Clonning data from GitHub
- cd ..   
+ cd ..
  wget https://cdn.getbukkit.org/spigot/spigot-1.15.2.jar  #Downloading server
- chmod +x spigot-1.15.2.jar  
- cd MCSOTIS  
- cd Spigot_1.15.2_Data  
+ chmod +x spigot-1.15.2.jar
+ cd MCSOTIS
+ cd Spigot_1.15.2_Data
  cp eula.txt ../..  #Copiing server files
- cp server.properties ../..  
- cd ../..  
+ cp server.properties ../..
+ cd ../..
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
- apt-get install zip unzip  
+ apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar spigot-1.15.2.jar" >> start.sh
  chmod +x start.sh
- clear  
+ clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "4" ]
+if [ "${version:-}" = "2" ]
 then
- apt-get install software-properties-common -y  
- add-apt-repository ppa:openjdk-r/ppa  
- apt-get update  
- apt-get install openjdk-8-jre -y  
- git clone https://github.com/AtherMage/Spigot_1.14.4_Data   
+ apt-get install software-properties-common -y
+ add-apt-repository ppa:openjdk-r/ppa
+ apt-get update
+ apt-get install openjdk-8-jre -y
+ git clone https://github.com/AtherMage/Spigot_1.14.4_Data
  cd ..
- wget https://cdn.getbukkit.org/spigot/spigot-1.14.4.jar  
- chmod +x spigot-1.14.4.jar   
- cd MCSOTIS  
- cd Spigot_1.14.4_Data  
+ wget https://cdn.getbukkit.org/spigot/spigot-1.14.4.jar
+ chmod +x spigot-1.14.4.jar
+ cd MCSOTIS
+ cd Spigot_1.14.4_Data
  cp eula.txt ../..
  cp server.properties ../..
  cd ../..
@@ -108,11 +60,11 @@ then
  unzip ngrok.zip
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar spigot-1.14.4.jar" >> start.sh
- chmod +x start.sh 
+ chmod +x start.sh
  clear
  echo -e Complete!
 fi
-if [ "${version:-}" = "5" ]
+if [ "${version:-}" = "3" ]
 then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -136,9 +88,9 @@ then
  clear
  echo -e Complete!
 fi
-if [ "${version:-}" = "6" ]
+if [ "${version:-}" = "4" ]
 then
- apt-get install software-properties-common -y 
+ apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
  apt-get update -y
  apt-get install openjdk-8-jre -y
@@ -159,9 +111,9 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "7" ]
+if [ "${version:-}" = "5" ]
 then
- apt-get install software-properties-common -y 
+ apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
  apt-get update -y
  apt-get install openjdk-8-jre -y
@@ -182,9 +134,9 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "8" ]
-then 
- apt-get install software-properties-common -y 
+if [ "${version:-}" = "6" ]
+then
+ apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
  apt-get update -y
  apt-get install openjdk-8-jre -y
@@ -205,9 +157,9 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "9" ]
-then 
- apt-get install software-properties-common -y 
+if [ "${version:-}" = "7" ]
+then
+ apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
  apt-get update -y
  apt-get install openjdk-8-jre -y
@@ -228,9 +180,9 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "10" ]
-then 
- apt-get install software-properties-common -y 
+if [ "${version:-}" = "8" ]
+then
+ apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
  apt-get update -y
  apt-get install openjdk-8-jre -y
@@ -251,9 +203,9 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "11" ]
-then 
- apt-get install software-properties-common -y 
+if [ "${version:-}" = "9" ]
+then
+ apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
  apt-get update -y
  apt-get install openjdk-8-jre -y
@@ -272,9 +224,9 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "12" ]
-then 
- apt-get install software-properties-common -y 
+if [ "${version:-}" = "10" ]
+then
+ apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
  apt-get update -y
  apt-get install openjdk-8-jre -y
@@ -293,26 +245,26 @@ then
  echo -e "\e[32mComplete!\e[0m"
 fi
 if [ "${version:-}" = "0" ]
-then 
+then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
  apt-get update
  apt-get install openjdk-8-jre -y
  clear
- echo -e "\e[32mComplete!\e[0m" 
-fi 
+ echo -e "\e[32mComplete!\e[0m"
+fi
 if [ "${version:-}" = "?" ]
-then 
+then
  clear
  echo -e "MCSOTIS - MineCraftServerOnTermuxInstallationScript. This script is designed to simplify the process of creating a Minecraft server on your phone. What does it do?
  1) Install Java
- 2) Download the selected version 
- 3) Copy pre-modified files 'eula.txt' and 'server.properties' 
+ 2) Download the selected version
+ 3) Copy pre-modified files 'eula.txt' and 'server.properties'
  4) Installs NGROK just in case.
  The script is still in development. if you find a bug or want to add support for other versions, write to athermage@gmail.com"
 fi
 if [ "${version:-}" = "X" ]
-then 
+then
  clear
  echo -e "Ok, bye!"
 fi
