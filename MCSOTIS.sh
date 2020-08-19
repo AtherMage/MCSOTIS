@@ -19,6 +19,7 @@ Please, select a version:
 read -p 'Version:' version;
 #Hi!  If you are reading this, it means that you are interested in how this script is made. I will say right away - VERY BAD. I don't know anything about programming. The basis for this script was made by the Android application "Termux Script Maker", it was in it that I learned to use the "read -p" and "if". I'm sorry that the script is made so badly.
 if { "${version:-}" = "1" ]
+then
  apt-get install software-properties-common -y  
  add-apt-repository ppa:openjdk-r/ppa  
  apt-get update  
@@ -315,4 +316,4 @@ if [ "${version:-}" = "X" ]
 then 
  clear
  echo -e "Ok, bye!"
-fi 
+fi
