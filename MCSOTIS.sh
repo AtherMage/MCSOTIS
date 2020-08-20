@@ -18,12 +18,16 @@ read -p 'Version:' version;
 #Hi!  If you are reading this, it means that you are interested in how this script is made. I will say right away - VERY BAD. I don't know anything about programming. The basis for this script was made by the Android application "Termux Script Maker", it was in it that I learned to use the "read -p" and "if". I'm sorry that the script is made so badly.
 if [ "${version:-}" = "1" ]
 then
+ clear
+ echo -e "[MCSOTIS] Installing Java...\n"
  apt-get install software-properties-common -y #Installing basic repositories
  add-apt-repository ppa:openjdk-r/ppa #Adding JDK to repositories list
  apt-get update #Updating all repositories
  apt-get install openjdk-8-jre -y  #Installing JDK
  git clone https://github.com/AtherMage/Spigot_1.15.2_Data  #Clonning data from GitHub
  cd ..
+ clear
+ echo -e "[MCSOTIS] Installing server...\n"
  wget https://cdn.getbukkit.org/spigot/spigot-1.15.2.jar  #Downloading server
  chmod +x spigot-1.15.2.jar
  cd MCSOTIS
@@ -31,6 +35,8 @@ then
  cp eula.txt ../..  #Copiing server files
  cp server.properties ../..
  cd ../..
+ clear
+ echo -e "[MCSOTIS] Installing ngrok.../n"
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
  apt-get install zip unzip
  unzip ngrok.zip
