@@ -1,6 +1,8 @@
 clear
 echo -e "MCSOTIS by AtherMage
 Please, select a version:
+1) Spigot 1.16.2
+2) Spigot 1.16.1
 1) Spigot 1.15.2
 2) Spigot 1.14.4
 3) Spigot 1.12.2
@@ -28,6 +30,66 @@ then
  cd ..
  clear
  echo -e "[MCSOTIS] Installing server...\n"
+ wget https://cdn.getbukkit.org/spigot/spigot-1.16.2.jar  #Downloading server
+ chmod +x spigot-1.16.2.jar
+ cd MCSOTIS
+ cd Spigot_1.15.2_Data
+ cp eula.txt ../..  #Copiing server files
+ cp server.properties ../..
+ cd ../..
+ clear
+ echo -e "[MCSOTIS] Installing ngrok...\n"
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
+ apt-get install zip unzip
+ unzip ngrok.zip
+ echo "clear" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar spigot-1.16.2.jar" >> start.sh
+ chmod +x start.sh
+ clear
+ echo -e "\e[32mComplete!\e[0m"
+fi
+if [ "${version:-}" = "2" ]
+then
+ clear
+ echo -e "[MCSOTIS] Installing Java...\n"
+ apt-get install software-properties-common -y #Installing basic repositories
+ add-apt-repository ppa:openjdk-r/ppa #Adding JDK to repositories list
+ apt-get update #Updating all repositories
+ apt-get install openjdk-8-jre -y  #Installing JDK
+ git clone https://github.com/AtherMage/Spigot_1.15.2_Data  #Clonning data from GitHub
+ cd ..
+ clear
+ echo -e "[MCSOTIS] Installing server...\n"
+ wget https://cdn.getbukkit.org/spigot/spigot-1.16.1.jar  #Downloading server
+ chmod +x spigot-1.16.1.jar
+ cd MCSOTIS
+ cd Spigot_1.15.2_Data
+ cp eula.txt ../..  #Copiing server files
+ cp server.properties ../..
+ cd ../..
+ clear
+ echo -e "[MCSOTIS] Installing ngrok...\n"
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
+ apt-get install zip unzip
+ unzip ngrok.zip
+ echo "clear" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar spigot-1.16.1.jar" >> start.sh
+ chmod +x start.sh
+ clear
+ echo -e "\e[32mComplete!\e[0m"
+fi
+if [ "${version:-}" = "3" ]
+then
+ clear
+ echo -e "[MCSOTIS] Installing Java...\n"
+ apt-get install software-properties-common -y #Installing basic repositories
+ add-apt-repository ppa:openjdk-r/ppa #Adding JDK to repositories list
+ apt-get update #Updating all repositories
+ apt-get install openjdk-8-jre -y  #Installing JDK
+ git clone https://github.com/AtherMage/Spigot_1.15.2_Data  #Clonning data from GitHub
+ cd ..
+ clear
+ echo -e "[MCSOTIS] Installing server...\n"
  wget https://cdn.getbukkit.org/spigot/spigot-1.15.2.jar  #Downloading server
  chmod +x spigot-1.15.2.jar
  cd MCSOTIS
@@ -36,7 +98,7 @@ then
  cp server.properties ../..
  cd ../..
  clear
- echo -e "[MCSOTIS] Installing ngrok.../n"
+ echo -e "[MCSOTIS] Installing ngrok...\n"
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
  apt-get install zip unzip
  unzip ngrok.zip
@@ -46,7 +108,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "2" ]
+if [ "${version:-}" = "4" ]
 then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -70,7 +132,7 @@ then
  clear
  echo -e Complete!
 fi
-if [ "${version:-}" = "3" ]
+if [ "${version:-}" = "5" ]
 then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -94,7 +156,7 @@ then
  clear
  echo -e Complete!
 fi
-if [ "${version:-}" = "4" ]
+if [ "${version:-}" = "6" ]
 then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -117,7 +179,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "5" ]
+if [ "${version:-}" = "7" ]
 then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -140,7 +202,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "6" ]
+if [ "${version:-}" = "8" ]
 then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -163,7 +225,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "7" ]
+if [ "${version:-}" = "9" ]
 then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -186,7 +248,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "8" ]
+if [ "${version:-}" = "10" ]
 then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -209,7 +271,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "9" ]
+if [ "${version:-}" = "11" ]
 then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
@@ -230,7 +292,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "10" ]
+if [ "${version:-}" = "12" ]
 then
  apt-get install software-properties-common -y
  add-apt-repository ppa:openjdk-r/ppa
