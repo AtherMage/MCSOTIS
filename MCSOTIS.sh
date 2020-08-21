@@ -3,16 +3,16 @@ echo -e "MCSOTIS by AtherMage
 Please, select a version:
 1) Spigot 1.16.2
 2) Spigot 1.16.1
-1) Spigot 1.15.2
-2) Spigot 1.14.4
-3) Spigot 1.12.2
-4) Vanilla 1.15.2
-5) Vanilla 1.14.4
-6) Vanilla 1.13.2
-7) Vanilla 1.12.2
-8) Vanilla 1.7.10
-9) Forge 1.12.2
-10)Forge 1.17.10
+3) Spigot 1.15.2
+4) Spigot 1.14.4
+5) Spigot 1.12.2
+6) Vanilla 1.15.2
+7) Vanilla 1.14.4
+8) Vanilla 1.13.2
+9) Vanilla 1.12.2
+10) Vanilla 1.7.10
+11) Forge 1.12.2
+12)Forge 1.17.10
 \e[1;33m0) Only install Java Development Kit
 ?) About MCSOTIS\e[0m
 \e[1;31mX) Exit\e[0m"
@@ -21,15 +21,12 @@ read -p 'Version:' version;
 if [ "${version:-}" = "1" ]
 then
  clear
- echo -e "[MCSOTIS] Installing Java...\n"
  apt-get install software-properties-common -y #Installing basic repositories
  add-apt-repository ppa:openjdk-r/ppa #Adding JDK to repositories list
  apt-get update #Updating all repositories
  apt-get install openjdk-8-jre -y  #Installing JDK
  git clone https://github.com/AtherMage/Spigot_1.15.2_Data  #Clonning data from GitHub
  cd ..
- clear
- echo -e "[MCSOTIS] Installing server...\n"
  wget https://cdn.getbukkit.org/spigot/spigot-1.16.2.jar  #Downloading server
  chmod +x spigot-1.16.2.jar
  cd MCSOTIS
@@ -37,8 +34,6 @@ then
  cp eula.txt ../..  #Copiing server files
  cp server.properties ../..
  cd ../..
- clear
- echo -e "[MCSOTIS] Installing ngrok...\n"
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
  apt-get install zip unzip
  unzip ngrok.zip
@@ -51,15 +46,12 @@ fi
 if [ "${version:-}" = "2" ]
 then
  clear
- echo -e "[MCSOTIS] Installing Java...\n"
  apt-get install software-properties-common -y #Installing basic repositories
  add-apt-repository ppa:openjdk-r/ppa #Adding JDK to repositories list
  apt-get update #Updating all repositories
  apt-get install openjdk-8-jre -y  #Installing JDK
  git clone https://github.com/AtherMage/Spigot_1.15.2_Data  #Clonning data from GitHub
  cd ..
- clear
- echo -e "[MCSOTIS] Installing server...\n"
  wget https://cdn.getbukkit.org/spigot/spigot-1.16.1.jar  #Downloading server
  chmod +x spigot-1.16.1.jar
  cd MCSOTIS
@@ -67,8 +59,6 @@ then
  cp eula.txt ../..  #Copiing server files
  cp server.properties ../..
  cd ../..
- clear
- echo -e "[MCSOTIS] Installing ngrok...\n"
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
  apt-get install zip unzip
  unzip ngrok.zip
@@ -81,15 +71,12 @@ fi
 if [ "${version:-}" = "3" ]
 then
  clear
- echo -e "[MCSOTIS] Installing Java...\n"
  apt-get install software-properties-common -y #Installing basic repositories
  add-apt-repository ppa:openjdk-r/ppa #Adding JDK to repositories list
  apt-get update #Updating all repositories
  apt-get install openjdk-8-jre -y  #Installing JDK
  git clone https://github.com/AtherMage/Spigot_1.15.2_Data  #Clonning data from GitHub
  cd ..
- clear
- echo -e "[MCSOTIS] Installing server...\n"
  wget https://cdn.getbukkit.org/spigot/spigot-1.15.2.jar  #Downloading server
  chmod +x spigot-1.15.2.jar
  cd MCSOTIS
@@ -97,8 +84,6 @@ then
  cp eula.txt ../..  #Copiing server files
  cp server.properties ../..
  cd ../..
- clear
- echo -e "[MCSOTIS] Installing ngrok...\n"
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
  apt-get install zip unzip
  unzip ngrok.zip
