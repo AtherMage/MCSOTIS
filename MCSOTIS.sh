@@ -12,7 +12,7 @@ Please, select a version:
 9) Vanilla 1.12.2
 10) Vanilla 1.7.10
 11) Forge 1.12.2
-12)Forge 1.17.10
+12) Forge 1.7.10
 \e[1;33m0) Only install Java Development Kit
 ?) About MCSOTIS\e[0m
 \e[1;31mX) Exit\e[0m"
