@@ -265,9 +265,7 @@ then
  cd ..
  wget -O minecraft_server.1.12.2.jar https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar
  git clone https://github.com/AtherMage/Forge_1.12.2_Data
- cd Forge_1.12.2_Data
- cp * ..
- cd ..
+ cp -r Forge_1.12.2_Data/* .
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
@@ -285,9 +283,7 @@ then
  apt-get install openjdk-8-jre -y
  cd ..
  git clone https://github.com/AtherMage/Forge_1.7.10_Data
- cd Forge_1.7.10_Data
- cp -r * ..
- cd ..
+ cp -r Forge_1.7.10_Data/* .
  wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
  apt-get install zip unzip
  unzip ngrok.zip
