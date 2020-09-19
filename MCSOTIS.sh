@@ -38,7 +38,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar spigot-1.16.2.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar spigot-1.16.2.jar -nogui" >> start.sh
  chmod +x start.sh
  clear
  echo -e "\e[32mComplete!\e[0m"
@@ -63,7 +63,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar spigot-1.16.1.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar spigot-1.16.1.jar -nogui" >> start.sh
  chmod +x start.sh
  clear
  echo -e "\e[32mComplete!\e[0m"
@@ -88,7 +88,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar spigot-1.15.2.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar spigot-1.15.2.jar -nogui" >> start.sh
  chmod +x start.sh
  clear
  echo -e "\e[32mComplete!\e[0m"
@@ -112,7 +112,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar spigot-1.14.4.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar spigot-1.14.4.jar -nogui" >> start.sh
  chmod +x start.sh
  clear
  echo -e Complete!
@@ -136,7 +136,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar spigot-1.12.2.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar spigot-1.12.2.jar -nogui" >> start.sh
  chmod +x start.sh
  clear
  echo -e Complete!
@@ -159,7 +159,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar vanilla_1.15.2.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar vanilla_1.15.2.jar -nogui" >> start.sh
  chmod +x start.sh vanilla_1.15.2.jar
  clear
  echo -e "\e[32mComplete!\e[0m"
@@ -182,7 +182,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar vanilla_1.14.4.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar vanilla_1.14.4.jar -nogui" >> start.sh
  chmod +x start.sh vanilla_1.14.4.jar
  clear
  echo -e "\e[32mComplete!\e[0m"
@@ -205,7 +205,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar vanilla_1.13.2.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar vanilla_1.13.2.jar -nogui" >> start.sh
  chmod +x start.sh vanilla_1.13.2.jar
  clear
  echo -e "\e[32mComplete!\e[0m"
@@ -228,7 +228,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar vanilla_1.12.2.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar vanilla_1.12.2.jar -nogui" >> start.sh
  chmod +x start.sh vanilla_1.12.2.jar
  clear
  echo -e "\e[32mComplete!\e[0m"
@@ -251,7 +251,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar vanilla_1.7.10.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar vanilla_1.7.10.jar -nogui" >> start.sh
  chmod +x start.sh vanilla_1.7.10.jar
  clear
  echo -e "\e[32mComplete!\e[0m"
@@ -270,7 +270,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar forge-1.12.2-14.23.5.2854.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar forge-1.12.2-14.23.5.2854.jar -nogui" >> start.sh
  chmod +x start.sh forge-1.12.2-14.23.5.2854.jar
  clear
  echo -e "\e[32mComplete!\e[0m"
@@ -288,7 +288,7 @@ then
  apt-get install zip unzip
  unzip ngrok.zip
  echo "clear" >> start.sh
- echo "java -Xms512M -Xmx2048M -jar forge-1.7.10-10.13.4.1614-1.7.10-universal.jar" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar forge-1.7.10-10.13.4.1614-1.7.10-universal.ja -noguir" >> start.sh
  chmod +x start.sh forge-1.7.10-10.13.4.1614-1.7.10-universal.jar
  clear
  echo -e "\e[32mComplete!\e[0m"
