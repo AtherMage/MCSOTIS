@@ -1,4 +1,11 @@
 clear
+echo -e "How did you run me? 
+1) In Termux(install Ubuntu)
+2) In Ubuntu(run main part of script)" 
+read -p 'Answer:' answer;
+if [ "${answer:-}" = "2" ] 
+then
+clear
 echo -e "MCSOTIS by AtherMage
 Please, select a version:
 1) Spigot 1.16.2
@@ -316,4 +323,14 @@ if [ "${version:-}" = "X" ]
 then
  clear
  echo -e "Ok, bye!"
+fi
+fi
+if [ "${answer:-}" = "1" ]
+then
+  cd .. 
+  pkg install wget openssl-tool proot -y 
+  hash -r 
+  wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh 
+  bash ubuntu.sh
+  echo Now you need to download and launch MCSOTIS in Ubuntu. 
 fi
