@@ -1,8 +1,13 @@
 clear
 echo -e "How did you run me? 
 1) In Termux(install Ubuntu)
-2) In Ubuntu(run main part of script)" 
+2) In Ubuntu(run main part of script)
+3) Exit"
 read -p 'Answer:' answer;
+if [ "${answer:-}" = "3" ]
+then
+ echo OK, bye!
+fi
 if [ "${answer:-}" = "2" ] 
 then
 clear
