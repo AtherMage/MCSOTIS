@@ -1,5 +1,5 @@
 clear
-echo -e "How did you run me? 
+echo "How did you run me? 
 1) In Termux(install Ubuntu)
 2) In Ubuntu(run main part of script)
 3) Exit"
@@ -337,5 +337,5 @@ then
   hash -r 
   wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh 
   bash ubuntu.sh
-  echo Now you need to download and launch MCSOTIS in Ubuntu. 
+  echo Now you need to download and launch MCSOTIS in Ubuntu. Use that command to do that automaticaly: apt-get update -y && apt-get install git -y && git clone https://github.com/AtherMage/MCSOTIS && cd MCSOTIS && ./MCSOTIS.sh
 fi
