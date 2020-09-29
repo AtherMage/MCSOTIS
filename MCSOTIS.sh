@@ -337,5 +337,10 @@ then
   hash -r 
   wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh 
   bash ubuntu.sh
-  echo "Now you need to download and launch MCSOTIS in Ubuntu. Use that command to do that automaticaly: 'apt-get update -y && apt-get install git -y && git clone https://github.com/AtherMage/MCSOTIS && cd MCSOTIS && ./MCSOTIS.sh'"
+  clear
+  echo "alias s='bash /data/data/com.termux/files/home/start-ubuntu.sh'"
+  mkdir ubuntu-fs/root/MCSOTIS_example
+  mkdir ubuntu-fs/root/MCSOTIS_example/MCSOTIS
+  cp MCSOTIS/MCSOTIS.sh ubuntu-fs/root/MCSOTIS_example/MCSOTIS
+  echo Now you can launch Ubuntu by using command 's'. We are already created a command for you, use it un Ubuntu to prepare it for MCSOTIS - 'apt-get update -y && apt-get install sudo git -y && echo "alias s='./start.sh'" && clear && echo Your Ubuntu is ready for using MCSOTIS! You can find it in MCSOTIS_example/MCSOTIS'
 fi
