@@ -338,9 +338,9 @@ then
   wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh 
   bash ubuntu.sh
   clear
-  echo "alias s='bash /data/data/com.termux/files/home/start-ubuntu.sh'"
+  echo "alias s='bash /data/data/com.termux/files/home/start-ubuntu.sh'" >> .bashrc
   mkdir ubuntu-fs/root/MCSOTIS_example
   mkdir ubuntu-fs/root/MCSOTIS_example/MCSOTIS
   cp MCSOTIS/MCSOTIS.sh ubuntu-fs/root/MCSOTIS_example/MCSOTIS
-  echo Now you can launch Ubuntu by using command 's'. We are already created a command for you, use it un Ubuntu to prepare it for MCSOTIS - 'apt-get update -y && apt-get install sudo git -y && echo "alias s='./start.sh'" && clear && echo Your Ubuntu is ready for using MCSOTIS! You can find it in MCSOTIS_example/MCSOTIS'
+  echo Now you can launch Ubuntu by using command 's'. We are already created a command for you, use it un Ubuntu to prepare it for MCSOTIS - 'apt-get update -y && apt-get install sudo git -y && echo "alias s='./start.sh'" >> .bashrc && clear && echo Your Ubuntu is ready for using MCSOTIS! You can find it in MCSOTIS_example/MCSOTIS'
 fi
