@@ -1,14 +1,9 @@
 clear
-echo "How did you run me? 
+echo -e "How did you run me? 
 1) In Termux(install Ubuntu)
-2) In Ubuntu(run main part of script)
-3) Exit"
+2) In Ubuntu(run main part of script)" 
 read -p 'Answer:' answer;
-if [ "${answer:-}" = "3" ]
-then
- echo OK, bye!
-fi
-if [ "${answer:-}" = "2" ] 
+if [ "${answer:-}" = "2"] 
 then
 clear
 echo -e "MCSOTIS by AtherMage
@@ -33,22 +28,24 @@ read -p 'Version:' version;
 if [ "${version:-}" = "1" ]
 then
  clear
- apt-get install software-properties-common -y #Installing basic repositories
- add-apt-repository ppa:openjdk-r/ppa #Adding JDK to repositories list
- apt-get update #Updating all repositories
- apt-get install openjdk-8-jre -y  #Installing JDK
- git clone https://github.com/AtherMage/Spigot_1.15.2_Data  #Clonning data from GitHub
+ echo [*] Installing Java...
+ apt-get update
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
+ echo [*] Downloading and installing server...
+ git clone https://github.com/AtherMage/Spigot_1.15.2_Data >/dev/null #Clonning data from GitHub
  cd ..
- wget https://cdn.getbukkit.org/spigot/spigot-1.16.2.jar  #Downloading server
+ clear
+ wget https://cdn.getbukkit.org/spigot/spigot-1.16.2.jar >/dev/null #Downloading server
  chmod +x spigot-1.16.2.jar
  cd MCSOTIS
  cd Spigot_1.15.2_Data
  cp eula.txt ../..  #Copiing server files
  cp server.properties ../..
  cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null #Downloading and unpacking ngrok
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar spigot-1.16.2.jar -nogui" >> start.sh
  chmod +x start.sh
@@ -58,22 +55,24 @@ fi
 if [ "${version:-}" = "2" ]
 then
  clear
- apt-get install software-properties-common -y #Installing basic repositories
- add-apt-repository ppa:openjdk-r/ppa #Adding JDK to repositories list
- apt-get update #Updating all repositories
- apt-get install openjdk-8-jre -y  #Installing JDK
- git clone https://github.com/AtherMage/Spigot_1.15.2_Data  #Clonning data from GitHub
+ echo [*] Installing Java...
+ apt-get update
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
+ echo [*]Downloading and installing server...
+ git clone https://github.com/AtherMage/Spigot_1.15.2_Data >/dev/null #Clonning data from GitHub
  cd ..
- wget https://cdn.getbukkit.org/spigot/spigot-1.16.1.jar  #Downloading server
+ echo 
+ wget https://cdn.getbukkit.org/spigot/spigot-1.16.1.jar >/dev/null #Downloading server
  chmod +x spigot-1.16.1.jar
  cd MCSOTIS
  cd Spigot_1.15.2_Data
  cp eula.txt ../..  #Copiing server files
  cp server.properties ../..
  cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null #Downloading and unpacking ngrok
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null 
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar spigot-1.16.1.jar -nogui" >> start.sh
  chmod +x start.sh
@@ -83,22 +82,23 @@ fi
 if [ "${version:-}" = "3" ]
 then
  clear
- apt-get install software-properties-common -y #Installing basic repositories
- add-apt-repository ppa:openjdk-r/ppa #Adding JDK to repositories list
- apt-get update #Updating all repositories
- apt-get install openjdk-8-jre -y  #Installing JDK
- git clone https://github.com/AtherMage/Spigot_1.15.2_Data  #Clonning data from GitHub
+ echo [*] Installing Java...
+ apt-get update
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
+ git clone https://github.com/AtherMage/Spigot_1.15.2_Data >/dev/null #Clonning data from GitHub
  cd ..
- wget https://cdn.getbukkit.org/spigot/spigot-1.15.2.jar  #Downloading server
+ echo [*] Downloading and installing server...
+ wget https://cdn.getbukkit.org/spigot/spigot-1.15.2.jar >/dev/null #Downloading server
  chmod +x spigot-1.15.2.jar
  cd MCSOTIS
  cd Spigot_1.15.2_Data
  cp eula.txt ../..  #Copiing server files
  cp server.properties ../..
  cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip  #Downloading and unpacking ngrok
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null #Downloading and unpacking ngrok
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar spigot-1.15.2.jar -nogui" >> start.sh
  chmod +x start.sh
@@ -107,22 +107,24 @@ then
 fi
 if [ "${version:-}" = "4" ]
 then
- apt-get install software-properties-common -y
- add-apt-repository ppa:openjdk-r/ppa
+ clear
+ echo [*] Installing Java...
  apt-get update
- apt-get install openjdk-8-jre -y
- git clone https://github.com/AtherMage/Spigot_1.14.4_Data
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
+ echo [*] Downloading and installing server...
+ git clone https://github.com/AtherMage/Spigot_1.14.4_Data >/dev/null
  cd ..
- wget https://cdn.getbukkit.org/spigot/spigot-1.14.4.jar
+ wget https://cdn.getbukkit.org/spigot/spigot-1.14.4.jar >/dev/null
  chmod +x spigot-1.14.4.jar
  cd MCSOTIS
  cd Spigot_1.14.4_Data
  cp eula.txt ../..
  cp server.properties ../..
  cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null 
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null 
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar spigot-1.14.4.jar -nogui" >> start.sh
  chmod +x start.sh
@@ -131,22 +133,24 @@ then
 fi
 if [ "${version:-}" = "5" ]
 then
- apt-get install software-properties-common -y
- add-apt-repository ppa:openjdk-r/ppa
+ clear
+ echo [*] Installing Java...
  apt-get update
- apt-get install openjdk-8-jre -y
- git clone https://github.com/AtherMage/Spigot_1.12.2_Data
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
+ echo [*] Downloading and installing server...
+ git clone https://github.com/AtherMage/Spigot_1.12.2_Data >/dev/null
  cd ..
- wget https://cdn.getbukkit.org/spigot/spigot-1.12.2.jar
+ wget https://cdn.getbukkit.org/spigot/spigot-1.12.2.jar >/dev/null
  chmod +x spigot-1.12.2.jar
  cd MCSOTIS
  cd Spigot_1.12.2_Data
  cp eula.txt ../..
  cp server.properties ../..
  cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar spigot-1.12.2.jar -nogui" >> start.sh
  chmod +x start.sh
@@ -155,21 +159,23 @@ then
 fi
 if [ "${version:-}" = "6" ]
 then
- apt-get install software-properties-common -y
- add-apt-repository ppa:openjdk-r/ppa
- apt-get update -y
- apt-get install openjdk-8-jre -y
+ clear
+ echo [*] Installing Java...
+ apt-get update
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
  cd ..
- wget -O vanilla_1.15.2.jar https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar
+ echo [*] Downloading and installing server...
+ wget -O vanilla_1.15.2.jar https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar >/dev/null
  cd MCSOTIS
- git clone https://github.com/AtherMage/Vanilla_Data
+ git clone https://github.com/AtherMage/Vanilla_Data >/dev/null
  cd Vanilla_Data
  cp eula.txt ../..
  cp server.properties ../..
  cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.15.2.jar -nogui" >> start.sh
  chmod +x start.sh vanilla_1.15.2.jar
@@ -178,21 +184,23 @@ then
 fi
 if [ "${version:-}" = "7" ]
 then
- apt-get install software-properties-common -y
- add-apt-repository ppa:openjdk-r/ppa
- apt-get update -y
- apt-get install openjdk-8-jre -y
+ clear
+ echo [*] Installing Java...
+ apt-get update
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
  cd ..
- wget -O vanilla_1.14.4.jar https://gid-minecraft.ru/download.php?c=minepacks&s=a91030869dbb12d0a4f677621e8a75c2&f=minecraft-server-1.14.4.jar&pid=9014&eid=0&t=1592418627
+ echo [*] Downloading and installing server...
+ wget -O vanilla_1.14.4.jar https://gid-minecraft.ru/download.php?c=minepacks&s=a91030869dbb12d0a4f677621e8a75c2&f=minecraft-server-1.14.4.jar&pid=9014&eid=0&t=1592418627 >/dev/null
  cd MCSOTIS
- git clone https://github.com/AtherMage/Vanilla_Data
+ git clone https://github.com/AtherMage/Vanilla_Data >/dev/null
  cd Vanilla_Data
  cp eula.txt ../..
  cp server.properties ../..
  cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.14.4.jar -nogui" >> start.sh
  chmod +x start.sh vanilla_1.14.4.jar
@@ -201,21 +209,23 @@ then
 fi
 if [ "${version:-}" = "8" ]
 then
- apt-get install software-properties-common -y
- add-apt-repository ppa:openjdk-r/ppa
- apt-get update -y
- apt-get install openjdk-8-jre -y
+ clear
+ echo [*] Installing Java...
+ apt-get update
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
  cd ..
- wget -O vanilla_1.13.2.jar https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar
+ echo [*] Downloading and installing server...
+ wget -O vanilla_1.13.2.jar https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar >/dev/null
  cd MCSOTIS
- git clone https://github.com/AtherMage/Vanilla_Data
+ git clone https://github.com/AtherMage/Vanilla_Data >/dev/null
  cd Vanilla_Data
  cp eula.txt ../..
  cp server.properties ../..
  cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.13.2.jar -nogui" >> start.sh
  chmod +x start.sh vanilla_1.13.2.jar
@@ -224,21 +234,23 @@ then
 fi
 if [ "${version:-}" = "9" ]
 then
- apt-get install software-properties-common -y
- add-apt-repository ppa:openjdk-r/ppa
- apt-get update -y
- apt-get install openjdk-8-jre -y
+ clear
+ echo [*] Installing Java...
+ apt-get update
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
  cd ..
- wget -O vanilla_1.12.2.jar https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar
+ echo [*] Downloading and installing server...
+ wget -O vanilla_1.12.2.jar https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar >/dev/null
  cd MCSOTIS
- git clone https://github.com/AtherMage/Vanilla_Data
+ git clone https://github.com/AtherMage/Vanilla_Data >/dev/null
  cd Vanilla_Data
  cp eula.txt ../..
  cp server.properties ../..
  cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.12.2.jar -nogui" >> start.sh
  chmod +x start.sh vanilla_1.12.2.jar
@@ -247,21 +259,23 @@ then
 fi
 if [ "${version:-}" = "10" ]
 then
- apt-get install software-properties-common -y
- add-apt-repository ppa:openjdk-r/ppa
- apt-get update -y
- apt-get install openjdk-8-jre -y
+ clear
+ echo [*] Installing Java...
+ apt-get update
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
  cd ..
- wget -O vanilla_1.7.10.jar https://launcher.mojang.com/mc/game/1.7.10/server/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar
+ echo [*] Downloading and installing server...
+ wget -O vanilla_1.7.10.jar https://launcher.mojang.com/mc/game/1.7.10/server/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar >/dev/null
  cd MCSOTIS
- git clone https://github.com/AtherMage/Vanilla_Data
+ git clone https://github.com/AtherMage/Vanilla_Data >/dev/null
  cd Vanilla_Data
  cp eula.txt ../..
  cp server.properties ../..
  cd ../..
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar vanilla_1.7.10.jar -nogui" >> start.sh
  chmod +x start.sh vanilla_1.7.10.jar
@@ -270,17 +284,19 @@ then
 fi
 if [ "${version:-}" = "11" ]
 then
- apt-get install software-properties-common -y
- add-apt-repository ppa:openjdk-r/ppa
- apt-get update -y
- apt-get install openjdk-8-jre -y
+ clear
+ echo [*] Installing Java...
+ apt-get update
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
  cd ..
- wget -O minecraft_server.1.12.2.jar https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar
- git clone https://github.com/AtherMage/Forge_1.12.2_Data
+ echo [*] Downloading and installing server...
+ wget -O minecraft_server.1.12.2.jar https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar >/dev/null
+ git clone https://github.com/AtherMage/Forge_1.12.2_Data >/dev/null
  cp -r Forge_1.12.2_Data/* .
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar forge-1.12.2-14.23.5.2854.jar -nogui" >> start.sh
  chmod +x start.sh forge-1.12.2-14.23.5.2854.jar
@@ -289,16 +305,18 @@ then
 fi
 if [ "${version:-}" = "12" ]
 then
- apt-get install software-properties-common -y
- add-apt-repository ppa:openjdk-r/ppa
- apt-get update -y
- apt-get install openjdk-8-jre -y
+ clear
+ echo [*] Installing Java...
+ apt-get update
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
  cd ..
- git clone https://github.com/AtherMage/Forge_1.7.10_Data
+ echo [*] Downloading and installing server...
+ git clone https://github.com/AtherMage/Forge_1.7.10_Data >/dev/null
  cp -r Forge_1.7.10_Data/* .
- wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip
- apt-get install zip unzip
- unzip ngrok.zip
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null
  echo "clear" >> start.sh
  echo "java -Xms512M -Xmx2048M -jar forge-1.7.10-10.13.4.1614-1.7.10-universal.ja -noguir" >> start.sh
  chmod +x start.sh forge-1.7.10-10.13.4.1614-1.7.10-universal.jar
@@ -307,10 +325,11 @@ then
 fi
 if [ "${version:-}" = "0" ]
 then
- apt-get install software-properties-common -y
- add-apt-repository ppa:openjdk-r/ppa
+ clear
+ echo [*] Installing Java...
  apt-get update
- apt-get install openjdk-8-jre -y
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
@@ -337,10 +356,4 @@ then
   hash -r 
   wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh 
   bash ubuntu.sh
-  clear
-  echo "alias s='bash /data/data/com.termux/files/home/start-ubuntu.sh'" >> .bashrc
-  mkdir ubuntu-fs/root/MCSOTIS_example
-  mkdir ubuntu-fs/root/MCSOTIS_example/MCSOTIS
-  cp MCSOTIS/MCSOTIS.sh ubuntu-fs/root/MCSOTIS_example/MCSOTIS
-  echo Now you can launch Ubuntu by using command 's'. We are already created a command for you, use it un Ubuntu to prepare it for MCSOTIS - 'apt-get update -y && apt-get install sudo git -y && echo "alias s='./start.sh'" >> .bashrc && clear && echo Your Ubuntu is ready for using MCSOTIS! You can find it in MCSOTIS_example/MCSOTIS'
-fi
+  echo Now you need to download and launch MCSOTIS in Ubuntu. 
