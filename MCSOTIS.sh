@@ -3,7 +3,7 @@ echo -e "How did you run me?
 1) In Termux(install Ubuntu)
 2) In Ubuntu(run main part of script)" 
 read -p 'Answer:' answer;
-if [ "${answer:-}" = "2"] 
+if [ "${answer:-}" = "2" ] 
 then
 clear
 echo -e "MCSOTIS by AtherMage
@@ -383,3 +383,4 @@ then
   wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh 
   bash ubuntu.sh
   echo Now you need to download and launch MCSOTIS in Ubuntu. 
+fi
