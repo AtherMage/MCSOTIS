@@ -8,25 +8,52 @@ then
 clear
 echo -e "MCSOTIS by AtherMage
 Please, select a version:
-1) Spigot 1.16.3
-2) Spigot 1.16.2
-3) Spigot 1.16.1
-4) Spigot 1.15.2
-5) Spigot 1.14.4
-6) Spigot 1.12.2
-7) Vanilla 1.15.2
-8) Vanilla 1.14.4
-9) Vanilla 1.13.2
-10) Vanilla 1.12.2
-11) Vanilla 1.7.10
-12) Forge 1.12.2
-13) Forge 1.7.10
+1) Spigot 1.16.4
+2) Spigot 1.16.3
+3) Spigot 1.16.2
+4) Spigot 1.16.1
+5) Spigot 1.15.2
+6) Spigot 1.14.4
+7) Spigot 1.12.2
+8) Vanilla 1.15.2
+9) Vanilla 1.14.4
+10) Vanilla 1.13.2
+11) Vanilla 1.12.2
+12) Vanilla 1.7.10
+13) Forge 1.12.2
+14) Forge 1.7.10
 \e[1;33m0) Only install Java Development Kit
 ?) About MCSOTIS\e[0m
 \e[1;31mX) Exit\e[0m"
 read -p 'Version:' version;
 #Hi!  If you are reading this, it means that you are interested in how this script is made. I will say right away - VERY BAD. I don't know anything about programming. The basis for this script was made by the Android application "Termux Script Maker", it was in it that I learned to use the "read -p" and "if". I'm sorry that the script is made so badly.
 if [ "${version:-}" = "1" ]
+then
+ clear
+ echo [*] Installing Java...
+ apt-get update
+ apt-get install software-properties-common -y >/dev/null #Installing basic repositories
+ apt-get install openjdk-8-jre -y >/dev/null #Installing JDK
+ echo [*] Downloading and installing server...
+ git clone https://github.com/AtherMage/Spigot_1.15.2_Data >/dev/null #Clonning data from GitHub
+ cd ..
+ wget https://cdn.getbukkit.org/spigot/spigot-1.16.4.jar >/dev/null #Downloading server
+ chmod +x spigot-1.16.4.jar
+ cd MCSOTIS
+ cd Spigot_1.15.2_Data
+ cp eula.txt ../..  #Copiing server files
+ cp server.properties ../..
+ cd ../..
+ wget -O ngrok.zip https://bin.equinox.io/a/nmkK3DkqZEB/ngrok-2.2.8-linux-arm64.zip >/dev/null #Downloading and unpacking ngrok
+ apt-get install zip unzip >/dev/null
+ unzip ngrok.zip >/dev/null
+ echo "clear" >> start.sh
+ echo "java -Xms512M -Xmx2048M -jar spigot-1.16.4.jar -nogui" >> start.sh
+ chmod +x start.sh
+ clear
+ echo -e "\e[32mComplete!\e[0m"
+fi
+if [ "${version:-}" = "2" ]
 then
  clear
  echo [*] Installing Java...
@@ -52,7 +79,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "2" ]
+if [ "${version:-}" = "3" ]
 then
  clear
  echo [*] Installing Java...
@@ -78,7 +105,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "3" ]
+if [ "${version:-}" = "4" ]
 then
  clear
  echo [*] Installing Java...
@@ -105,7 +132,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "4" ]
+if [ "${version:-}" = "5" ]
 then
  clear
  echo [*] Installing Java...
@@ -131,7 +158,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "5" ]
+if [ "${version:-}" = "6" ]
 then
  clear
  echo [*] Installing Java...
@@ -157,7 +184,7 @@ then
  clear
  echo -e Complete!
 fi
-if [ "${version:-}" = "6" ]
+if [ "${version:-}" = "7" ]
 then
  clear
  echo [*] Installing Java...
@@ -183,7 +210,7 @@ then
  clear
  echo -e Complete!
 fi
-if [ "${version:-}" = "7" ]
+if [ "${version:-}" = "8" ]
 then
  clear
  echo [*] Installing Java...
@@ -208,7 +235,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "8" ]
+if [ "${version:-}" = "9" ]
 then
  clear
  echo [*] Installing Java...
@@ -233,7 +260,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "9" ]
+if [ "${version:-}" = "10" ]
 then
  clear
  echo [*] Installing Java...
@@ -258,7 +285,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "10" ]
+if [ "${version:-}" = "11" ]
 then
  clear
  echo [*] Installing Java...
@@ -283,7 +310,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "11" ]
+if [ "${version:-}" = "12" ]
 then
  clear
  echo [*] Installing Java...
@@ -308,7 +335,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "12" ]
+if [ "${version:-}" = "13" ]
 then
  clear
  echo [*] Installing Java...
@@ -329,7 +356,7 @@ then
  clear
  echo -e "\e[32mComplete!\e[0m"
 fi
-if [ "${version:-}" = "13" ]
+if [ "${version:-}" = "14" ]
 then
  clear
  echo [*] Installing Java...
@@ -383,4 +410,3 @@ then
   wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh 
   bash ubuntu.sh
   echo Now you need to download and launch MCSOTIS in Ubuntu. 
-fi
