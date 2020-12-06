@@ -409,4 +409,5 @@ then
   hash -r 
   wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh 
   bash ubuntu.sh
-  echo Now you need to download and launch MCSOTIS in Ubuntu. 
+  echo Now you need to download and launch MCSOTIS in Ubuntu.
+fi
