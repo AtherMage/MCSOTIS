@@ -30,7 +30,7 @@ def checker():
    print("We have just found out you are using Termux.")
    time.sleep(2)
    os.system("clear")
-   termux.prepare()
+   termux_prepare()
  else:
   print("OS is NOT supported, stopping...")
   exit()
