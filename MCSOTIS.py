@@ -8,9 +8,11 @@ import platform
 import colorama
 import psutil
 from colorama import Fore, Back, Style
+from random import randint
 import config as cfg
 import links as lnk
 colorama.init()
+
 os_platform = ""
 recommended_ram = 0
 
@@ -34,11 +36,17 @@ def checker():
   exit()
  time.sleep(3)
 
+def easter_egg_selector():
+  easter_egg_list = ["Just Monika.", "thanks mirivan", "thanks zhazhazha", "fuck you termux", "writing easter egg list while listening to Linkin Park", "Bedrock edition sucks"]
+  easter_egg_num = randint(0,5)
+  easter_egg = easter_egg_list[easter_egg_num]
+  return easter_egg
 def ram_selector():
  total_ram_raw = int(psutil.virtual_memory().total)
  total_ram_mb = total_ram_raw / 1024 / 1024
  global recommended_ram 
  recommended_ram = int(total_ram_mb / 3)
+
 #Version selector. Can be edited to add more versions(links file edit required too)
 def version_selector():
  print("Availible versions:\n1) Paper 1.16.5\n2) Paper 1.15.2\n3) Paper 1.14.4\n4) Paper 1.13.2\n5) Paper 1.12.2")
@@ -123,9 +131,17 @@ def termux_prepare():
 
 #Main menu.
 def main():
- os.system("clear")
+ global os_platform
+ if os_platform == "Linux":
+   os.system("clear")
+ if os_platform == 'Windows':
+   os.system('cls')
  print(Fore.GREEN + "MCSOTIS v.ALPHA by AtherMage" + Style.RESET_ALL)
  print("============================")
+ if cfg.easter_eggs_enabled == 1:
+   e_egg = easter_egg_selector()
+   print(Fore.GREEN + e_egg + Style.RESET_ALL)
+   print("============================")
  print("What do you want to do?")
  print("0) Exit \n1) Install Minecraft server\n2) Prepare my Termux for minecraft server (Use if we wasn't able to detect your Termux for some reason)\n3) About")
  selected_action = input(">>> ")
@@ -134,11 +150,11 @@ def main():
  elif selected_action == "0":
   exit()
  elif selected_action == "3":
-  print("Info: ")
+  print("Info: \n")
   print("MinecraftServerForTermuxInstallationScript v.ALPHA")
   print("Developer: AtherMage (Telegram: @AtherMage)")
   print("Ubuntu install script: https://github.com/MFDGaming/ubuntu-in-termux/")
-  print("Support Windows/MacOS: NO")
+  print("Support Windows/MacOS: Windows yes, MacOS not tested")
   print("")
   print("Returning in main menu in 10 seconds...")
   time.sleep(10)
