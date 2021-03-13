@@ -6,17 +6,21 @@ import requests
 import os
 import platform
 import colorama
+import psutil
 from colorama import Fore, Back, Style
 import config as cfg
 import links as lnk
 colorama.init()
+os_platform = ""
+recommended_ram = 0
 
 #Checker.
 def checker():
  print("Please wait while MCSOTIS checks everything...")
  print("")
+ global os_platform
  os_platform = platform.system()
- if os_platform == 'Linux':
+ if os_platform == 'Linux' or 'Windows':
   print("OS is supported!")
   termux_test_0 = os.popen("echo $PREFIX")
   termux_test = termux_test_0.read()
@@ -30,6 +34,11 @@ def checker():
   exit()
  time.sleep(3)
 
+def ram_selector():
+ total_ram_raw = int(psutil.virtual_memory().total)
+ total_ram_mb = total_ram_raw / 1024 / 1024
+ global recommended_ram 
+ recommended_ram = int(total_ram_mb / 3)
 #Version selector. Can be edited to add more versions(links file edit required too)
 def version_selector():
  print("Availible versions:\n1) Paper 1.16.5\n2) Paper 1.15.2\n3) Paper 1.14.4\n4) Paper 1.13.2\n5) Paper 1.12.2")
@@ -48,7 +57,9 @@ def version_selector():
 
 #Server downloader. Edit it with accuracy, pretty unstable thing.
 def downloader():
+ #Getting download link by using version selector
  dl_link = version_selector()
+ #Selecting directory for server
  print("Please, select a folder for server:\n1) /root/server/ (Linux, Recommended)\n2) Custom (Use if you know what you do!)\n3) Current")
  selected_directory = input(">>> ")
  if selected_directory == "1":
@@ -58,18 +69,40 @@ def downloader():
   directory = input(">>> ")
  elif selected_directory == "3":
   directory = str(pathlib.Path().absolute()) + "/"
+ else:
+   print('Wrong input, exiting...')
+   exit()
  if not os.path.exists(directory):
     os.makedirs(directory)
+ #Selecting ram size
+ ram_selector()
+ global recommended_ram
+ print('Please, select RAM size for server:\n1) ' + str(recommended_ram) + ' MB (automatically calculated)\n2) Custom\n3) 2 GB (optimal)')
+ selected_ram = input('>>> ')
+ if selected_ram == '1':
+   ram_for_server = recommended_ram
+ elif selected_ram == '2':
+   ram_for_server = int(input('Enter RAM in MB\n>>> '))
+ elif selected_ram == '3':
+   ram_for_server = 2048
+ else:
+   print('Wrong input, exiting...')
+   exit()
  print("Downloading...")
  server_file_data = requests.get(dl_link)
  print("Writiing...")
  open(directory + 'server.jar','wb').write(server_file_data.content)
  print("Creating eula.txt...")
  open(directory + 'eula.txt', 'a').write('eula=true')
- print("Creating start.sh...")
- open(directory + 'start.sh', 'a').write("java -jar server.jar;echo 'Server was stopped, 10 seconds until restart. You can cancel it by Ctrl + C';sleep 10;./start.sh")
- os.system("chmod +x " + directory + "start.sh")
- print(Fore.GREEN + "Done. " + Style.RESET_ALL + "You can start your server by typing './start.sh'")
+ global os_platform
+ if os_platform == 'Linux':
+  print("Creating start.sh...")
+  open(directory + 'start.sh', 'a').write("java -Xms" + str(ram_for_server) + "M -Xmx" + str(ram_for_server) + "M -jar server.jar;echo 'Server was stopped, 10 seconds until restart. You can cancel it by Ctrl + C';sleep 10;./start.sh")
+  os.system("chmod +x " + directory + "start.sh")
+ if os_platform == 'Windows':
+  print("Creating start.bat...")
+  open(directory + 'start.bat', 'a').write("java -Xms" + str(ram_for_server) + "M -Xmx" + str(ram_for_server) + "M -jar server.jar")
+ print(Fore.GREEN + "Done. " + Style.RESET_ALL + "You can start your server by typing './start.sh' or 'start.bat'")
 
 def termux_prepare():
  print("Do you want to install Ubuntu? (y/n) (external script will be used, credits in 'About')")
@@ -113,7 +146,7 @@ def main():
  elif selected_action == "2":
   termux_prepare()
  else:
-  print(Fore.RED + "Wrong input, going back to main menu..." + Style.RESET_ALL)
+  print(Fore.YELLOW + "Wrong input, going back to main menu..." + Style.RESET_ALL)
   time.sleep(1)
   main()
 
